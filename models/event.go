@@ -38,7 +38,7 @@ func (e *Event) Save() error {
 	return err
 }
 
-func GetAllEvents() ([]Event, error) {
+func (e *Event) GetAllEvents() ([]Event, error) {
 
 	query := "SELECT * FROM events"
 	rows, err := db.DB.Query(query)
