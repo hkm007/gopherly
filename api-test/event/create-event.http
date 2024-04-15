@@ -1,9 +1,10 @@
 POST http://localhost:8080/events
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHRlc3QuY29tIiwiZXhwIjoxNzEzMjI0MzQxLCJ1c2VySWQiOjF9.Igi0iSAfUL9WVmzlPYqb7crDQ-Es4pesx6fnWn-z4zk
 
 {
-    "name": "test event 2",
-    "description": "test event desc 2",
+    "name": "event 2",
+    "description": "event desc2",
     "location": "hyderabad",
     "dateTime": "2024-08-07T10:30:00.000Z"
 }

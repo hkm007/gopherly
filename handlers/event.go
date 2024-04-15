@@ -3,7 +3,6 @@ package handlers
 import (
 	"net/http"
 	"strconv"
-
 	"github.com/gin-gonic/gin"
 	"github.com/hkm007/gopherly/models"
 )
@@ -43,18 +42,17 @@ func GetEvent(context *gin.Context) {
 }
 
 func CreateEvent(context *gin.Context) {
+
 	var event models.Event
 	err := context.ShouldBindJSON(&event)
 
 	if err != nil {
-		context.JSON(http.StatusBadRequest, gin.H{
-			"message": "Cannot parse request data!",
-		})
+		context.JSON(http.StatusBadRequest, gin.H{"message": "Cannot parse request data!"})
 		return
 	}
 
-	event.ID = 1
-	event.UserID = 1
+	userId := context.GetInt64("userId")
+	event.UserID = userId
 	err = event.Save()
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{

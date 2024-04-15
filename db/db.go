@@ -2,7 +2,6 @@ package db
 
 import (
 	"database/sql"
-
 	"github.com/hkm007/gopherly/utils/constants"
 	_ "github.com/mattn/go-sqlite3"
 )

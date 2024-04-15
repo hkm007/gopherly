@@ -2,7 +2,6 @@ package models
 
 import (
 	"errors"
-
 	"github.com/hkm007/gopherly/db"
 	"github.com/hkm007/gopherly/utils"
 )
