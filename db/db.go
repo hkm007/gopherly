@@ -2,19 +2,20 @@ package db
 
 import (
 	"database/sql"
-	_"github.com/mattn/go-sqlite3"
+
+	"github.com/hkm007/gopherly/utils/constants"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 var DB *sql.DB
 
 func InitDB() {
 
-	db_instance, err := sql.Open("sqlite3", "gopherly.db")
-	DB = db_instance
-
+	db_instance, err := sql.Open("sqlite3", constants.DB_NAME)
 	if err != nil {
 		panic("Cannot initialise database...")
 	}
+	DB = db_instance
 
 	DB.SetMaxOpenConns(10)
 	DB.SetMaxIdleConns(5)
