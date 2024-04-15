@@ -48,7 +48,7 @@ func CreateEvent(context *gin.Context) {
 
 	if err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{
-			"message": err,
+			"message": "Cannot parse request data!",
 		})
 		return
 	}

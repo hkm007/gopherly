@@ -13,6 +13,9 @@ func main() {
 	db.InitDB()
 	server := gin.Default()
 
+	// auth api routes
+	routes.RegisterAuthRoutes(server)
+	
 	// event api routes
 	routes.RegisterEventRoutes(server)
 
