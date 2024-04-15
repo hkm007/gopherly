@@ -4,11 +4,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/hkm007/gopherly/db"
 	"github.com/hkm007/gopherly/models"
 )
 
 func main() {
 
+	db.InitDB()
 	server := gin.Default()
 
 	server.GET("/events", getEvents)
