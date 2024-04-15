@@ -1,7 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("Hello from gopherly")
+
+	server := gin.Default()
+
+	server.GET("/events", getEvents)
+
+	server.Run(":8080")
+}
+
+func getEvents(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{
+		"msg": "hello from gopherly",
+	})
 }
